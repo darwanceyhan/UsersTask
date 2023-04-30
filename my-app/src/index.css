@@ -17,3 +17,13 @@ body,html{
     width: 70px;
     height: 100%;
 }
+
+.searchInput{
+    border-color: white;
+}
+
+.searchInput:focus{
+    border-color: white;
+    outline-style: none;
+    box-shadow: none;
+}
