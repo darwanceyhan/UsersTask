@@ -1,6 +1,8 @@
 import "./index.css";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import { Checkbox } from "@mui/material";
+import ControlPointIcon from "@mui/icons-material/ControlPoint";
 
 function App() {
   return (
@@ -8,7 +10,7 @@ function App() {
       <div className="flex flex-row items-center h-20 w-full border-b-2">
         <div className="basis-1/4">Users</div>
         <div className="basis-1/2 h-full flex items-center">
-          <Stack spacing={8} direction="row">
+          <Stack spacing={8} direction="row" className="h-full">
             <button className="navbarFilterItems">All Users</button>
             <button className="navbarFilterItems">Contributor</button>
             <button className="navbarFilterItems">Author</button>
@@ -17,9 +19,11 @@ function App() {
           </Stack>
         </div>
         <div className="basis-1/4 flex flex-row">
-          <div className="basis-1/2"></div>
+          <div className="basis-1/3"></div>
           <div className="basis-1/2">
-            <Button variant="contained">Add New User</Button>
+            <Button variant="contained" className="text-sm">
+              <ControlPointIcon /> Add New User
+            </Button>
           </div>
         </div>
       </div>
@@ -38,6 +42,15 @@ function App() {
         </svg>
 
         <input type="text" placeholder="Search" className="searchInput" />
+      </div>
+      <div className="flex flex-row w-full text-xs items-center listBar">
+        <Checkbox />
+        <div className="basis-1/6 gap-4">Avatar</div>
+        <div className="basis-1/2">Name</div>
+        <div className="basis-1/2">Username</div>
+        <div className="basis-1/2">Email</div>
+        <div className="basis-1/4">Role</div>
+        <div className="basis-1/4">Edit</div>
       </div>
     </>
   );

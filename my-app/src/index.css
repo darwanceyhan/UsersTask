@@ -5,17 +5,22 @@
 body,html{
     height: 100%;
     width: 100%;
-    box-sizing: border-box;
-    font-family: "montserrat", sans-serif;
+    
 }
 
 .navbarFilterItems{
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
+    line-height:15.85px ;
     color: #2940D3;
     width: 70px;
     height: 100%;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 2px solid transparent;
+}
+.navbarFilterItems:hover{
+    border-bottom-color: #2940D3;
 }
 
 .searchInput{
@@ -26,4 +31,9 @@ body,html{
     border-color: white;
     outline-style: none;
     box-shadow: none;
+}
+
+.listBar{
+    background-color: #F5F5F7;
+    height: 42px;
 }
