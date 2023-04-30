@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body,html{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: "montserrat", sans-serif;
+}
+
+.navbarFilterItems{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    color: #2940D3;
+    width: 70px;
+    height: 100%;
+}
