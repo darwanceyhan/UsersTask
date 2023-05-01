@@ -6,8 +6,10 @@ import ControlPointIcon from "@mui/icons-material/ControlPoint";
 import { useEffect, useState } from "react";
 import UserData from "./data/data";
 import UserInterface from "./interface/UserInterface";
+import Popup from "./components/popup/popup";
 
 function App() {
+  const [popup, setPopup] = useState(false);
   const [users, setUsers] = useState<UserInterface[]>([]);
 
   useEffect(() => {
@@ -52,7 +54,11 @@ function App() {
         <div className="basis-1/4 flex flex-row">
           <div className="basis-1/3"></div>
           <div className="basis-1/2">
-            <Button variant="contained" className="text-sm">
+            <Button
+              variant="contained"
+              className="text-sm"
+              onClick={() => setPopup(true)}
+            >
               <ControlPointIcon /> Add New User
             </Button>
           </div>
@@ -140,6 +146,7 @@ function App() {
           </div>
         </div>
       ))}
+      {popup && <Popup />}
     </>
   );
 }
