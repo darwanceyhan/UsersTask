@@ -3,8 +3,17 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { Checkbox } from "@mui/material";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
+import { useEffect, useState } from "react";
+import UserData from "./data/data";
+import UserInterface from "./interface/UserInterface";
 
 function App() {
+  const [users, setUsers] = useState<UserInterface[]>([]);
+
+  useEffect(() => {
+    setUsers(UserData);
+  }, []);
+
   return (
     <>
       <div className="flex flex-row items-center h-20 w-full border-b-2">
