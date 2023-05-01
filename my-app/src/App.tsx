@@ -146,7 +146,7 @@ function App() {
           </div>
         </div>
       ))}
-      {popup && <Popup />}
+      {popup && <Popup setPopup={setPopup} />}
     </>
   );
 }
