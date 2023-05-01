@@ -1,8 +1,11 @@
+import CloseIcon from "@mui/icons-material/Close";
 const Popup = () => {
   return (
     <div className="popup-container">
       <div className="popup">
-        <h1>hello</h1>
+        <div className="close-button">
+          <CloseIcon />
+        </div>
       </div>
     </div>
   );
