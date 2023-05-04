@@ -5,7 +5,15 @@ interface UserListProps {
   users: UserInterface[];
   setUsers: React.Dispatch<React.SetStateAction<UserInterface[]>>;
   setPopup: React.Dispatch<React.SetStateAction<boolean>>;
+  setFullname: React.Dispatch<React.SetStateAction<string>>;
+  setUsername: React.Dispatch<React.SetStateAction<string>>;
+  setEmail: React.Dispatch<React.SetStateAction<string>>;
+  setRole: React.Dispatch<React.SetStateAction<string>>;
   setId: React.Dispatch<React.SetStateAction<number>>;
+  fullname: string;
+  username: string;
+  email: string;
+  role: string;
   id: number;
 }
 
