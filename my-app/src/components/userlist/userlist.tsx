@@ -36,6 +36,10 @@ function UserList(props: UserListProps): JSX.Element {
             <button
               className="hover:text-rose-600"
               onClick={() => {
+                props.setFullname(user.name);
+                props.setUsername(user.username);
+                props.setEmail(user.email);
+                props.setRole(user.role);
                 props.setId(user.id);
                 props.setPopup(true);
               }}
