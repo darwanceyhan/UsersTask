@@ -72,6 +72,7 @@ const Popup = (props: PopupProps) => {
         <div
           className="close-button"
           onClick={() => {
+            resetState(props);
             props.setPopup(false);
           }}
         >
