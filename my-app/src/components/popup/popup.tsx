@@ -20,10 +20,12 @@ interface PopupProps {
   setUsername: React.Dispatch<React.SetStateAction<string>>;
   setEmail: React.Dispatch<React.SetStateAction<string>>;
   setRole: React.Dispatch<React.SetStateAction<string>>;
+  setId: React.Dispatch<React.SetStateAction<number>>;
   fullname: string;
   username: string;
   email: string;
   role: string;
+  id: number;
 }
 
 const resetState = (props: PopupProps) => {
@@ -47,6 +49,22 @@ const Popup = (props: PopupProps) => {
     resetState(props);
   };
 
+  const editUser = () => {
+    const newUser: UserInterface = {
+      id: props.id,
+      name: props.fullname,
+      username: props.username,
+      email: props.email,
+      role: props.role,
+    };
+    const newUsers = props.users.map((user) =>
+      user.id === props.id ? newUser : user
+    );
+    props.setUsers(newUsers);
+    props.setPopup(false);
+    resetState(props);
+  };
+
   return (
     <div className="popup-container">
       <div className="popup">
@@ -59,7 +77,7 @@ const Popup = (props: PopupProps) => {
           <CloseIcon />
         </div>
 
-        <form onSubmit={addNewUser}>
+        <form onSubmit={props.id !== 0 ? editUser : addNewUser}>
           <Stack spacing={2} sx={{ width: "90%" }} className="mx-auto">
             <TextField
               id="outlined-basic"
@@ -136,7 +154,7 @@ const Popup = (props: PopupProps) => {
             </Stack>
           </Stack>
           <Button variant="contained" className="text-sm" type="submit">
-            Add New User
+            {props.id !== 0 ? "Edit User" : "Add User"}
           </Button>
         </form>
       </div>

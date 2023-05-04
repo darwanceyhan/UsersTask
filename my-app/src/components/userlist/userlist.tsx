@@ -5,6 +5,8 @@ interface UserListProps {
   users: UserInterface[];
   setUsers: React.Dispatch<React.SetStateAction<UserInterface[]>>;
   setPopup: React.Dispatch<React.SetStateAction<boolean>>;
+  setId: React.Dispatch<React.SetStateAction<number>>;
+  id: number;
 }
 
 function UserList(props: UserListProps): JSX.Element {
@@ -23,7 +25,13 @@ function UserList(props: UserListProps): JSX.Element {
           <div className="basis-1/2">{user.email}</div>
           <div className="basis-1/4">{user.role}</div>
           <div className="basis-1/4 flex gap-4">
-            <button className="hover:text-rose-600">
+            <button
+              className="hover:text-rose-600"
+              onClick={() => {
+                props.setId(user.id);
+                props.setPopup(true);
+              }}
+            >
               <svg
                 width="23"
                 height="23"
