@@ -35,6 +35,11 @@ const Popup = (props: PopupProps) => {
     props.setUsers([...props.users, newUser]);
     props.setPopup(false);
   };
+
+  const deleteUser = (id: number) => {
+    const newUsers = props.users.filter((user) => user.id !== id);
+    props.setUsers(newUsers);
+  };
   return (
     <div className="popup-container">
       <div className="popup">
