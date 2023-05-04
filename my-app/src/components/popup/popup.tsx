@@ -22,6 +22,18 @@ const Popup = (props: PopupProps) => {
   const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [role, setRole] = useState<string>("");
+
+  const addUser = () => {
+    const newUser: UserInterface = {
+      id: props.users.length + 1,
+      name: fullname,
+      username: username,
+      email: email,
+      role: role,
+    };
+    props.setUsers([...props.users, newUser]);
+    props.setPopup(false);
+  };
   return (
     <div className="popup-container">
       <div className="popup">
