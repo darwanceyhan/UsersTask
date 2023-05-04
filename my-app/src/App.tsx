@@ -108,7 +108,7 @@ function App() {
         <div className="basis-1/4">Edit</div>
       </div>
       {users && <UserList users={users} />}
-      {popup && <Popup setPopup={setPopup} />}
+      {popup && <Popup setPopup={setPopup} users={users} />}
     </>
   );
 }
