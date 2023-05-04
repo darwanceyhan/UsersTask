@@ -29,7 +29,7 @@ const Popup = (props: PopupProps) => {
   const addNewUser = () => {
     const newUser: UserInterface = {
       id: props.users.length + 1,
-      fullname: props.fullname,
+      name: props.fullname,
       username: props.username,
       email: props.email,
       role: props.role,

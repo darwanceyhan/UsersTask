@@ -37,7 +37,10 @@ function UserList(props: UserListProps): JSX.Element {
                 />
               </svg>
             </button>
-            <button>
+            <button
+              className="hover:text-rose-600"
+              onClick={() => deleteUser(user.id)}
+            >
               <svg
                 width="18"
                 height="24"
