@@ -3,6 +3,7 @@ import UserInterface from "../../interface/UserInterface";
 
 interface UserListProps {
   users: UserInterface[];
+  setPopup: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const deleteUser = (id: number) => {
   const newUsers = props.users.filter((user) => user.id !== id);
