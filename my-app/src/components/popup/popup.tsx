@@ -33,6 +33,7 @@ const resetState = (props: PopupProps) => {
   props.setUsername("");
   props.setEmail("");
   props.setRole("");
+  props.setId(0);
 };
 
 const Popup = (props: PopupProps) => {
