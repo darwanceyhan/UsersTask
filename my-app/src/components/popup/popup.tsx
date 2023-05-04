@@ -24,7 +24,7 @@ const Popup = (props: PopupProps) => {
   const [email, setEmail] = useState<string>("");
   const [role, setRole] = useState<string>("");
 
-  const addUser = () => {
+  const addNewUser = () => {
     const newUser: UserInterface = {
       id: props.users.length + 1,
       name: fullname,
@@ -47,7 +47,7 @@ const Popup = (props: PopupProps) => {
           <CloseIcon />
         </div>
 
-        <form onSubmit={addUser}>
+        <form onSubmit={addNewUser}>
           <Stack spacing={2} sx={{ width: "90%" }} className="mx-auto">
             <TextField
               id="outlined-basic"
