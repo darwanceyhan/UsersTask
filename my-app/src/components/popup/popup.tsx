@@ -10,19 +10,26 @@ import {
   Avatar,
   Button,
 } from "@mui/material";
-import { useState } from "react";
 import UserInterface from "../../interface/UserInterface";
 
 interface PopupProps {
   users: UserInterface[];
   setUsers: React.Dispatch<React.SetStateAction<UserInterface[]>>;
   setPopup: React.Dispatch<React.SetStateAction<boolean>>;
+  setFullname: React.Dispatch<React.SetStateAction<string>>;
+  setUsername: React.Dispatch<React.SetStateAction<string>>;
+  setEmail: React.Dispatch<React.SetStateAction<string>>;
+  setRole: React.Dispatch<React.SetStateAction<string>>;
+  fullname: string;
+  username: string;
+  email: string;
+  role: string;
 }
 const Popup = (props: PopupProps) => {
   const addNewUser = () => {
     const newUser: UserInterface = {
       id: props.users.length + 1,
-      name: fullname,
+      fullname: fullname,
       username: username,
       email: email,
       role: role,
@@ -49,21 +56,21 @@ const Popup = (props: PopupProps) => {
               id="outlined-basic"
               label="Full Name"
               variant="outlined"
-              value={fullname}
+              value={props.fullname}
               onChange={(e) => setFullname(e.target.value)}
             />
             <TextField
               id="outlined-basic"
               label="Username"
               variant="outlined"
-              value={username}
+              value={props.username}
               onChange={(e) => setUsername(e.target.value)}
             />
             <TextField
               id="outlined-basic"
               label="Email Adress"
               variant="outlined"
-              value={email}
+              value={props.email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <Box>
@@ -73,7 +80,7 @@ const Popup = (props: PopupProps) => {
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   label="Age"
-                  value={role}
+                  value={props.role}
                   onChange={(e) => setRole(e.target.value)}
                 >
                   <MenuItem value={"Contributor"}>Contributor</MenuItem>
