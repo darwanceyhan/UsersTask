@@ -25,6 +25,14 @@ interface PopupProps {
   email: string;
   role: string;
 }
+
+const resetState = (props: PopupProps) => {
+  props.setFullname("");
+  props.setUsername("");
+  props.setEmail("");
+  props.setRole("");
+};
+
 const Popup = (props: PopupProps) => {
   const addNewUser = () => {
     const newUser: UserInterface = {
@@ -36,6 +44,7 @@ const Popup = (props: PopupProps) => {
     };
     props.setUsers([...props.users, newUser]);
     props.setPopup(false);
+    resetState(props);
   };
 
   return (
