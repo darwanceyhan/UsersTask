@@ -111,7 +111,9 @@ function App() {
         <div className="basis-1/4">Role</div>
         <div className="basis-1/4">Edit</div>
       </div>
-      {users && <UserList users={users} setPopup={setPopup} />}
+      {users && (
+        <UserList users={users} setPopup={setPopup} setUser={setUsers} />
+      )}
       {popup && (
         <Popup
           setPopup={setPopup}

@@ -3,13 +3,15 @@ import UserInterface from "../../interface/UserInterface";
 
 interface UserListProps {
   users: UserInterface[];
+  setUsers: React.Dispatch<React.SetStateAction<UserInterface[]>>;
   setPopup: React.Dispatch<React.SetStateAction<boolean>>;
 }
-const deleteUser = (id: number) => {
-  const newUsers = props.users.filter((user) => user.id !== id);
-  props.setUsers(newUsers);
-};
+
 function UserList(props: UserListProps): JSX.Element {
+  const deleteUser = (id: number) => {
+    const newUsers = props.users.filter((user) => user.id !== id);
+    props.setUsers(newUsers);
+  };
   return (
     <>
       {props.users.map((user) => (
