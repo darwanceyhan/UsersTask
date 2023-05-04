@@ -114,9 +114,17 @@ function App() {
       </div>
       {users && (
         <UserList
-          users={users}
           setPopup={setPopup}
+          users={users}
           setUsers={setUsers}
+          fullname={fullname}
+          setFullname={setFullname}
+          username={username}
+          setUsername={setUsername}
+          email={email}
+          setEmail={setEmail}
+          role={role}
+          setRole={setRole}
           id={id}
           setId={setId}
         />
