@@ -29,10 +29,10 @@ const Popup = (props: PopupProps) => {
   const addNewUser = () => {
     const newUser: UserInterface = {
       id: props.users.length + 1,
-      fullname: fullname,
-      username: username,
-      email: email,
-      role: role,
+      fullname: props.fullname,
+      username: props.username,
+      email: props.email,
+      role: props.role,
     };
     props.setUsers([...props.users, newUser]);
     props.setPopup(false);
@@ -57,21 +57,21 @@ const Popup = (props: PopupProps) => {
               label="Full Name"
               variant="outlined"
               value={props.fullname}
-              onChange={(e) => setFullname(e.target.value)}
+              onChange={(e) => props.setFullname(e.target.value)}
             />
             <TextField
               id="outlined-basic"
               label="Username"
               variant="outlined"
               value={props.username}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e) => props.setUsername(e.target.value)}
             />
             <TextField
               id="outlined-basic"
               label="Email Adress"
               variant="outlined"
               value={props.email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => props.setEmail(e.target.value)}
             />
             <Box>
               <FormControl fullWidth>
@@ -81,7 +81,7 @@ const Popup = (props: PopupProps) => {
                   id="demo-simple-select"
                   label="Age"
                   value={props.role}
-                  onChange={(e) => setRole(e.target.value)}
+                  onChange={(e) => props.setRole(e.target.value)}
                 >
                   <MenuItem value={"Contributor"}>Contributor</MenuItem>
                   <MenuItem value={"Subscriber"}>Subscriber</MenuItem>
