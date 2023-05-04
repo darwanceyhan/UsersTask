@@ -9,7 +9,14 @@ import {
   Select,
   Avatar,
 } from "@mui/material";
-const Popup = (props: any) => {
+import UserInterface from "../../interface/UserInterface";
+
+interface PopupProps {
+  users: UserInterface[];
+  setUsers: React.Dispatch<React.SetStateAction<UserInterface[]>>;
+  setPopup: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const Popup = (props: PopupProps) => {
   return (
     <div className="popup-container">
       <div className="popup">
