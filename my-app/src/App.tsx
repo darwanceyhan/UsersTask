@@ -16,6 +16,7 @@ function App() {
   const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [role, setRole] = useState<string>("");
+  const [id, setId] = useState<number>(0);
 
   useEffect(() => {
     setUsers(UserData);
@@ -112,7 +113,13 @@ function App() {
         <div className="basis-1/4">Edit</div>
       </div>
       {users && (
-        <UserList users={users} setPopup={setPopup} setUsers={setUsers} />
+        <UserList
+          users={users}
+          setPopup={setPopup}
+          setUsers={setUsers}
+          id={id}
+          setId={setId}
+        />
       )}
       {popup && (
         <Popup
@@ -127,6 +134,8 @@ function App() {
           setEmail={setEmail}
           role={role}
           setRole={setRole}
+          id={id}
+          setId={setId}
         />
       )}
     </>
