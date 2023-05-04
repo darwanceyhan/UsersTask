@@ -12,6 +12,10 @@ import UserList from "./components/userlist/userlist";
 function App() {
   const [popup, setPopup] = useState(false);
   const [users, setUsers] = useState<UserInterface[]>([]);
+  const [fullname, setFullname] = useState<string>("");
+  const [username, setUsername] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [role, setRole] = useState<string>("");
 
   useEffect(() => {
     setUsers(UserData);

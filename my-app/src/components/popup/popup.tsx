@@ -19,11 +19,6 @@ interface PopupProps {
   setPopup: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const Popup = (props: PopupProps) => {
-  const [fullname, setFullname] = useState<string>("");
-  const [username, setUsername] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [role, setRole] = useState<string>("");
-
   const addNewUser = () => {
     const newUser: UserInterface = {
       id: props.users.length + 1,
