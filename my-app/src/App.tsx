@@ -112,7 +112,21 @@ function App() {
         <div className="basis-1/4">Edit</div>
       </div>
       {users && <UserList users={users} />}
-      {popup && <Popup setPopup={setPopup} users={users} setUsers={setUsers} />}
+      {popup && (
+        <Popup
+          setPopup={setPopup}
+          users={users}
+          setUsers={setUsers}
+          fullname={fullname}
+          setFullname={setFullname}
+          username={username}
+          setUsername={setUsername}
+          email={email}
+          setEmail={setEmail}
+          role={role}
+          setRole={setRole}
+        />
+      )}
     </>
   );
 }
