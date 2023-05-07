@@ -22,6 +22,10 @@ function App() {
     setUsers(UserData);
   }, []);
 
+  const deleteSelectedUsers = () => {
+    const newUsers = users.filter((user) => !user.checked);
+    setUsers(newUsers);
+  };
   return (
     <>
       <div className="flex flex-row items-center h-20 w-full border-b-2">
@@ -100,7 +104,14 @@ function App() {
               fill="#82868C"
             />
           </svg>
-          <button className="hover:text-rose-600">Delete</button>
+          <button
+            className="hover:text-rose-600"
+            onClick={() => {
+              deleteSelectedUsers();
+            }}
+          >
+            Delete
+          </button>
         </div>
       </div>
       <div className="flex flex-row w-full text-xs items-center listBar">
