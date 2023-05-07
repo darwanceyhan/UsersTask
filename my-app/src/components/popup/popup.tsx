@@ -44,6 +44,7 @@ const Popup = (props: PopupProps) => {
       username: props.username,
       email: props.email,
       role: props.role,
+      checked: false,
     };
     props.setUsers([...props.users, newUser]);
     props.setPopup(false);
@@ -57,6 +58,7 @@ const Popup = (props: PopupProps) => {
       username: props.username,
       email: props.email,
       role: props.role,
+      checked: false,
     };
     const newUsers = props.users.map((user) =>
       user.id === props.id ? newUser : user

@@ -5,6 +5,7 @@ const UserData = [
     username: "zachary-gonzalez",
     email: "zachary-gonzalez@gmail.com",
     role: "Editor",
+    checked: false,
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ const UserData = [
     username: "amanda-montogomery",
     email: "montogomery@ya.com",
     role: "Subscriber",
+    checked: false,
   },
 ];
 

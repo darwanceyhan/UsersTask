@@ -26,7 +26,7 @@ function UserList(props: UserListProps): JSX.Element {
     <>
       {props.users.map((user) => (
         <div className="flex flex-row w-full text-xs h-20 items-center userList">
-          <Checkbox />
+          <Checkbox checked={user.checked} />
           <div className="basis-1/6 gap-4"></div>
           <div className="basis-1/2">{user.name}</div>
           <div className="basis-1/2">{user.username}</div>
