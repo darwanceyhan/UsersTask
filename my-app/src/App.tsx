@@ -26,6 +26,23 @@ function App() {
     const newUsers = users.filter((user) => !user.checked);
     setUsers(newUsers);
   };
+
+  const checkAllUsers = () => {
+    if (users.filter((user) => user.checked).length === users.length) {
+      const newUsers = users.map((user) => {
+        user.checked = false;
+        return user;
+      });
+      setUsers(newUsers);
+    } else {
+      const newUsers = users.map((user) => {
+        user.checked = true;
+        return user;
+      });
+      setUsers(newUsers);
+    }
+  };
+
   return (
     <>
       <div className="flex flex-row items-center h-20 w-full border-b-2">
@@ -115,7 +132,7 @@ function App() {
         </div>
       </div>
       <div className="flex flex-row w-full text-xs items-center listBar">
-        <Checkbox />
+        <Checkbox onClick={checkAllUsers} />
         <div className="basis-1/6 gap-4">Avatar</div>
         <div className="basis-1/2">Name</div>
         <div className="basis-1/2">Username</div>
