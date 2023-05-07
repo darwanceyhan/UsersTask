@@ -132,7 +132,10 @@ function App() {
         </div>
       </div>
       <div className="flex flex-row w-full text-xs items-center listBar">
-        <Checkbox onClick={checkAllUsers} />
+        <Checkbox
+          onClick={checkAllUsers}
+          checked={users.length === users.filter((user) => user.checked).length}
+        />
         <div className="basis-1/6 gap-4">Avatar</div>
         <div className="basis-1/2">Name</div>
         <div className="basis-1/2">Username</div>
