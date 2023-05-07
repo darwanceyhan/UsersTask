@@ -22,11 +22,22 @@ function UserList(props: UserListProps): JSX.Element {
     const newUsers = props.users.filter((user) => user.id !== id);
     props.setUsers(newUsers);
   };
+
+  const checkedUser = (id: number) => {
+    const newUsers = props.users.map((user) =>
+      user.id === id ? { ...user, checked: !user.checked } : user
+    );
+    props.setUsers(newUsers);
+  };
+
   return (
     <>
       {props.users.map((user) => (
         <div className="flex flex-row w-full text-xs h-20 items-center userList">
-          <Checkbox checked={user.checked} />
+          <Checkbox
+            checked={user.checked}
+            onChange={() => checkedUser(user.id)}
+          />
           <div className="basis-1/6 gap-4"></div>
           <div className="basis-1/2">{user.name}</div>
           <div className="basis-1/2">{user.username}</div>
