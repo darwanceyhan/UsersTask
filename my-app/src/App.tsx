@@ -160,6 +160,8 @@ function App() {
           setRole={setRole}
           id={id}
           setId={setId}
+          page={page}
+          setPage={setPage}
         />
       )}
       {popup && (
