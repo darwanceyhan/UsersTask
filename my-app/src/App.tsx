@@ -8,6 +8,7 @@ import UserData from "./data/data";
 import UserInterface from "./interface/UserInterface";
 import Popup from "./components/popup/popup";
 import UserList from "./components/userlist/userlist";
+import Pagination from "./components/pagination/pagination";
 
 function App() {
   const [popup, setPopup] = useState(false);
@@ -177,6 +178,7 @@ function App() {
           setId={setId}
         />
       )}
+      <Pagination />
     </>
   );
 }
