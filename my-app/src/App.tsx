@@ -19,6 +19,7 @@ function App() {
   const [role, setRole] = useState<string>("");
   const [id, setId] = useState<number>(0);
   const [page, setPage] = useState<number>(1);
+  const [currentUser, setCurrentUser] = useState<UserInterface[]>([]);
 
   useEffect(() => {
     setUsers(UserData);
