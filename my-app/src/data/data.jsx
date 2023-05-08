@@ -1,20 +1,17 @@
-const UserData = [
-  {
-    id: 1,
-    name: "zachary gonzalez",
-    username: "zachary-gonzalez",
-    email: "zachary-gonzalez@gmail.com",
-    role: "Editor",
-    checked: false,
-  },
-  {
-    id: 2,
-    name: "amanda montogomery",
-    username: "amanda-montogomery",
-    email: "montogomery@ya.com",
-    role: "Subscriber",
-    checked: false,
-  },
-];
+const UserData = () => {
+  let data = [];
+
+  for (let i = 0; i < 40; i++) {
+    data.push({
+      id: i + 1,
+      name: "zachary gonzalez",
+      username: "zachary-gonzalez",
+      email: "zachary-gonzalez@gmail.com",
+      role: "Editor",
+      checked: false,
+    });
+  }
+  return data;
+};
 
 export default UserData;
