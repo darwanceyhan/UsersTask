@@ -16,7 +16,10 @@ const Pagination = (props: PaginationProps) => {
       <nav aria-label="Page navigation">
         <ul className="inline-flex">
           <li>
-            <button className="rounded h-10 px-5 text-pagination-text transition-colors duration-150 rounded-l-lg focus:shadow-outline hover:bg-pagination-bg hover:opacity-40">
+            <button
+              className="rounded h-10 px-5 text-pagination-text transition-colors duration-150 rounded-l-lg focus:shadow-outline hover:bg-pagination-bg hover:opacity-40"
+              onClick={() => props.setPage(props.page - 1)}
+            >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
                 <path
                   d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
@@ -44,7 +47,10 @@ const Pagination = (props: PaginationProps) => {
             );
           })}
           <li>
-            <button className="h-10 px-5 text-pagination-text transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-pagination-bg rounded hover:opacity-40">
+            <button
+              className="h-10 px-5 text-pagination-text transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-pagination-bg rounded hover:opacity-40"
+              onClick={() => props.setPage(props.page + 1)}
+            >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
                 <path
                   d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
