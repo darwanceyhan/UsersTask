@@ -18,6 +18,7 @@ interface UserListProps {
   role: string;
   id: number;
   page: number;
+  search: string;
 }
 
 function UserList(props: UserListProps): JSX.Element {
