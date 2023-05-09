@@ -43,12 +43,10 @@ function App() {
       });
       setUsers(newUsers);
     } else {
-      const newUsers = users
-        .filter((user) => username.includes(search) || email.includes(search))
-        .map((user) => {
-          user.checked = true;
-          return user;
-        });
+      const newUsers = users.map((user) => {
+        user.checked = true;
+        return user;
+      });
       setUsers(newUsers);
     }
   };
