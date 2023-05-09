@@ -7,7 +7,10 @@ interface PaginationProps {
 }
 
 const Pagination = (props: PaginationProps) => {
-  const PageCount = Math.ceil(props.users.length / 20);
+  const ChangePage = (e: React.MouseEvent<HTMLButtonElement>) => {
+    props.setPage(parseInt(e.currentTarget.value));
+  };
+  const PageCount = Math.ceil(props.users.length / 10);
   return (
     <div className="bg-white p-4 grid place-items-center mt-10">
       <nav aria-label="Page navigation">
@@ -26,7 +29,15 @@ const Pagination = (props: PaginationProps) => {
           {Array.from(Array(PageCount), (e, i) => {
             return (
               <li>
-                <button className="h-10 px-5 text-pagination-text transition-colors duration-150 bg-white focus:shadow-outline hover:bg-pagination-bg rounded">
+                <button
+                  className={
+                    props.page === i + 1
+                      ? "h-10 px-5 text-pagination-text transition-colors duration-150 bg-pagination-bg rounded focus:shadow-outline hover:bg-pagination-bg rounded"
+                      : "h-10 px-5 text-pagination-text transition-colors duration-150 bg-white rounded focus:shadow-outline hover:bg-pagination-bg rounded"
+                  }
+                  value={i + 1}
+                  onClick={ChangePage}
+                >
                   {i + 1}
                 </button>
               </li>
