@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         "pagination-bg": "#2940D3",
         "pagination-text": "#E3E6EB",
+        "pagination-arrow": "#82868C",
       },
     },
   },
