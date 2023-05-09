@@ -1,4 +1,10 @@
-const Pagination = () => {
+import UserInterface from "../../interface/UserInterface";
+
+interface PaginationProps {
+  users: UserInterface[];
+}
+
+const Pagination = (props: PaginationProps) => {
   return (
     <div className="bg-white p-4 grid place-items-center mt-10">
       <nav aria-label="Page navigation">
