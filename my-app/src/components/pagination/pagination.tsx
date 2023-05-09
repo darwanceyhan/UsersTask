@@ -2,6 +2,8 @@ import UserInterface from "../../interface/UserInterface";
 
 interface PaginationProps {
   users: UserInterface[];
+  page: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const Pagination = (props: PaginationProps) => {
