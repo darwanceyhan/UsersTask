@@ -5,6 +5,7 @@ interface PaginationProps {
 }
 
 const Pagination = (props: PaginationProps) => {
+  const PageCount = Math.ceil(props.users.length / 20);
   return (
     <div className="bg-white p-4 grid place-items-center mt-10">
       <nav aria-label="Page navigation">
@@ -20,21 +21,15 @@ const Pagination = (props: PaginationProps) => {
               </svg>
             </button>
           </li>
-          <li>
-            <button className="h-10 px-5 text-pagination-text transition-colors duration-150 focus:shadow-outline hover:bg-pagination-bg rounded">
-              1
-            </button>
-          </li>
-          <li>
-            <button className="h-10 px-5 text-pagination-text transition-colors duration-150 bg-pagination-bg  border border-r-0 border-pagination-bg focus:shadow-outline rounded">
-              2
-            </button>
-          </li>
-          <li>
-            <button className="h-10 px-5 text-pagination-text transition-colors duration-150 focus:shadow-outline hover:bg-pagination-bg rounded">
-              3
-            </button>
-          </li>
+          {Array.from(Array(PageCount), (e, i) => {
+            return (
+              <li>
+                <button className="h-10 px-5 text-pagination-text transition-colors duration-150 bg-white focus:shadow-outline hover:bg-pagination-bg rounded">
+                  {i + 1}
+                </button>
+              </li>
+            );
+          })}
           <li>
             <button className="h-10 px-5 text-pagination-text transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-pagination-bg rounded">
               <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
