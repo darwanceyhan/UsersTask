@@ -181,7 +181,7 @@ function App() {
           setId={setId}
         />
       )}
-      <Pagination users={users} />
+      <Pagination users={users} page={page} setPage={setPage} />
     </>
   );
 }
