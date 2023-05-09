@@ -19,6 +19,7 @@ function App() {
   const [role, setRole] = useState<string>("");
   const [id, setId] = useState<number>(0);
   const [page, setPage] = useState<number>(1);
+  const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
     setUsers(UserData);
@@ -162,6 +163,7 @@ function App() {
           setId={setId}
           page={page}
           setPage={setPage}
+          search={search}
         />
       )}
       {popup && (
