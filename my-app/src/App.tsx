@@ -109,7 +109,13 @@ function App() {
             />
           </svg>
 
-          <input type="text" placeholder="Search" className="searchInput" />
+          <input
+            type="text"
+            placeholder="Search"
+            className="searchInput"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </div>
         <div className="flex items-center justify-end mr-5 gap-2 ">
           <svg
