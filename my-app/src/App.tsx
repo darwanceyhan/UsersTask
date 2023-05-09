@@ -31,17 +31,24 @@ function App() {
   };
 
   const checkAllUsers = () => {
-    if (users.filter((user) => user.checked).length === users.length) {
+    if (
+      users.filter((user) => user.checked).length ===
+      users.filter(
+        (user) => username.includes(search) || email.includes(search)
+      ).length
+    ) {
       const newUsers = users.map((user) => {
         user.checked = false;
         return user;
       });
       setUsers(newUsers);
     } else {
-      const newUsers = users.map((user) => {
-        user.checked = true;
-        return user;
-      });
+      const newUsers = users
+        .filter((user) => username.includes(search) || email.includes(search))
+        .map((user) => {
+          user.checked = true;
+          return user;
+        });
       setUsers(newUsers);
     }
   };
@@ -143,7 +150,11 @@ function App() {
       <div className="flex flex-row w-full text-xs items-center listBar">
         <Checkbox
           onClick={checkAllUsers}
-          checked={users.length === users.filter((user) => user.checked).length}
+          checked={
+            users.filter(
+              (user) => username.includes(search) || email.includes(search)
+            ).length === users.filter((user) => user.checked).length
+          }
         />
         <div className="basis-1/6 gap-4">Avatar</div>
         <div className="basis-1/2">Name</div>
