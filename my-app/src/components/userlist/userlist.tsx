@@ -40,7 +40,7 @@ function UserList(props: UserListProps): JSX.Element {
         .filter(
           (user) =>
             user.email.includes(props.search) ||
-            user.name.includes(props.search)
+            user.username.includes(props.search)
         )
         .slice((props.page - 1) * 10, props.page * 10)
         .map((user) => (
