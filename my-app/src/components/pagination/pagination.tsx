@@ -17,7 +17,7 @@ const Pagination = (props: PaginationProps) => {
         <ul className="inline-flex">
           <li>
             <button
-              className="rounded h-10 px-5 text-pagination-text transition-colors duration-150 rounded-l-lg focus:shadow-outline hover:bg-pagination-bg hover:opacity-40"
+              className="rounded h-10 px-5 text-pagination-text transition-colors duration-150 rounded-l-lg focus:shadow-outline hover:bg-pagination-bg hover:opacity-40 text-pagination-arrow"
               onClick={() => props.setPage(props.page - 1)}
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
@@ -48,7 +48,7 @@ const Pagination = (props: PaginationProps) => {
           })}
           <li>
             <button
-              className="h-10 px-5 text-pagination-text transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-pagination-bg rounded hover:opacity-40"
+              className="h-10 px-5 text-pagination-text transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-pagination-bg rounded hover:opacity-40 text-pagination-arrow"
               onClick={() => props.setPage(props.page + 1)}
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
