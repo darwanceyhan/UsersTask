@@ -46,7 +46,7 @@ function UserList(props: UserListProps): JSX.Element {
         .filter((user) => {
           if (props.filterToUser === "All Users") {
             return user;
-          } else if (props.filterToUser === props.role) {
+          } else if (props.filterToUser === user.role) {
             return user;
           }
         })

@@ -7,7 +7,7 @@ const UserData = () => {
       name: "zachary gonzalez",
       username: "zachary-gonzalez",
       email: "zachary-gonzalez@gmail.com",
-      role: "Editor",
+      role: "Author",
       checked: false,
     });
   }
