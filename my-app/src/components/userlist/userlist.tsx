@@ -11,6 +11,7 @@ interface UserListProps {
   setRole: React.Dispatch<React.SetStateAction<string>>;
   setId: React.Dispatch<React.SetStateAction<number>>;
   setPage: React.Dispatch<React.SetStateAction<number>>;
+  setFilterToUser: React.Dispatch<React.SetStateAction<string>>;
 
   fullname: string;
   username: string;
@@ -19,6 +20,7 @@ interface UserListProps {
   id: number;
   page: number;
   search: string;
+  filterToUser: string;
 }
 
 function UserList(props: UserListProps): JSX.Element {
