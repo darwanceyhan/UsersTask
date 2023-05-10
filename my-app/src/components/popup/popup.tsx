@@ -157,9 +157,15 @@ const Popup = (props: PopupProps) => {
               ></Avatar>
             </Stack>
           </Stack>
-          <Button variant="contained" className="text-sm" type="submit">
-            {props.id !== 0 ? "Edit User" : "Add User"}
-          </Button>
+          <div className="mt-5 mx-auto w-32 h-9">
+            <Button
+              variant="contained"
+              className="text-sm w-full h-full"
+              type="submit"
+            >
+              {props.id !== 0 ? "Edit User" : "Add User"}
+            </Button>
+          </div>
         </form>
       </div>
     </div>
