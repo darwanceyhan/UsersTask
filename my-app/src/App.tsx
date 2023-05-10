@@ -20,6 +20,7 @@ function App() {
   const [id, setId] = useState<number>(0);
   const [page, setPage] = useState<number>(1);
   const [search, setSearch] = useState<string>("");
+  const [filterToUser, setFilterToUser] = useState<string>("All Users");
 
   useEffect(() => {
     setUsers(UserData);
@@ -66,11 +67,36 @@ function App() {
         </div>
         <div className="basis-1/2 h-full flex items-center">
           <Stack spacing={8} direction="row" className="h-full">
-            <button className="navbarFilterItems">All Users</button>
-            <button className="navbarFilterItems">Contributor</button>
-            <button className="navbarFilterItems">Author</button>
-            <button className="navbarFilterItems">Adminstrator</button>
-            <button className="navbarFilterItems">Subscriber</button>
+            <button
+              className="navbarFilterItems"
+              onClick={() => setFilterToUser("All Users")}
+            >
+              All Users
+            </button>
+            <button
+              className="navbarFilterItems"
+              onClick={() => setFilterToUser("Administrator")}
+            >
+              Contributor
+            </button>
+            <button
+              className="navbarFilterItems"
+              onClick={() => setFilterToUser("Author")}
+            >
+              Author
+            </button>
+            <button
+              className="navbarFilterItems"
+              onClick={() => setFilterToUser("Adminstrator")}
+            >
+              Adminstrator
+            </button>
+            <button
+              className="navbarFilterItems"
+              onClick={() => setFilterToUser("Subscriber")}
+            >
+              Subscriber
+            </button>
           </Stack>
         </div>
         <div className="basis-1/4 flex flex-row">
