@@ -191,7 +191,6 @@ function App() {
           setPage={setPage}
           search={search}
           filterToUser={filterToUser}
-          setFilterToUser={setFilterToUser}
         />
       )}
       {popup && (

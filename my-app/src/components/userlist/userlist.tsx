@@ -43,6 +43,13 @@ function UserList(props: UserListProps): JSX.Element {
             user.email.includes(props.search) ||
             user.username.includes(props.search)
         )
+        .filter((user) => {
+          if (props.filterToUser === "All Users") {
+            return user;
+          } else if (props.filterToUser === props.role) {
+            return user;
+          }
+        })
         .slice((props.page - 1) * 10, props.page * 10)
         .map((user) => (
           <div className="flex flex-row w-full text-xs h-20 items-center userList">
