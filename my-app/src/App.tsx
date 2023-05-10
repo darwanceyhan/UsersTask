@@ -31,23 +31,10 @@ function App() {
   };
 
   const checkAllUsers = () => {
-    if (
-      users.filter((user) => user.checked).length ===
-      users.filter(
-        (user) => username.includes(search) || email.includes(search)
-      ).length
-    ) {
-      const newUsers = users.map((user) => {
-        user.checked = false;
-        return user;
-      });
-      setUsers(newUsers);
+    if (users.every((user) => user.checked === true)) {
+      setUsers(users.map((user) => ({ ...user, checked: false })));
     } else {
-      const newUsers = users.map((user) => {
-        user.checked = true;
-        return user;
-      });
-      setUsers(newUsers);
+      setUsers(users.map((user) => ({ ...user, checked: true })));
     }
   };
 
@@ -149,9 +136,7 @@ function App() {
         <Checkbox
           onClick={checkAllUsers}
           checked={
-            users.filter(
-              (user) => username.includes(search) || email.includes(search)
-            ).length === users.filter((user) => user.checked).length
+            users.length > 0 && users.every((user) => user.checked === true)
           }
         />
         <div className="basis-1/6 gap-4">Avatar</div>
