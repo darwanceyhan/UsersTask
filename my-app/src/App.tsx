@@ -65,43 +65,26 @@ function App() {
           </div>
           Users
         </div>
-        <div className="basis-1/2 h-full flex items-center">
+        <div className="h-full flex items-center mx-auto">
           <Stack spacing={8} direction="row" className="h-full">
-            <button
-              className="navbarFilterItems"
-              onClick={() => setFilterToUser("All Users")}
-            >
-              All Users
-            </button>
-            <button
-              className="navbarFilterItems"
-              onClick={() => setFilterToUser("Administrator")}
-            >
-              Contributor
-            </button>
-            <button
-              className="navbarFilterItems"
-              onClick={() => setFilterToUser("Author")}
-            >
-              Author
-            </button>
-            <button
-              className="navbarFilterItems"
-              onClick={() => setFilterToUser("Adminstrator")}
-            >
-              Adminstrator
-            </button>
-            <button
-              className="navbarFilterItems"
-              onClick={() => setFilterToUser("Subscriber")}
-            >
-              Subscriber
-            </button>
+            {[
+              "All Users",
+              "Contributor",
+              "Author",
+              "Adminstrator",
+              "Subscriber",
+            ].map((item) => (
+              <button
+                className="navbarFilterItems"
+                onClick={() => setFilterToUser(item)}
+              >
+                {item}
+              </button>
+            ))}
           </Stack>
         </div>
         <div className="basis-1/4 flex flex-row">
-          <div className="basis-1/3"></div>
-          <div className="basis-1/2">
+          <div className="mx-auto">
             <Button
               variant="contained"
               className="text-sm"
