@@ -1,5 +1,6 @@
 import { Checkbox } from "@mui/material";
 import UserInterface from "../../interface/UserInterface";
+import avatarObject from "../../interface/avatarInterface";
 
 interface UserListProps {
   users: UserInterface[];
@@ -20,10 +21,7 @@ interface UserListProps {
   page: number;
   search: string;
   filterToUser: string;
-  avatar: {
-    URL: string;
-    avatarNumber: number;
-  };
+  avatar: avatarObject;
 }
 
 function UserList(props: UserListProps): JSX.Element {
