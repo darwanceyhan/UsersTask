@@ -37,6 +37,10 @@ const resetState = (props: PopupProps) => {
   props.setEmail("");
   props.setRole("");
   props.setId(0);
+  props.setAvatar({
+    URL: "",
+    avatarNumber: 0,
+  });
 };
 
 const Popup = (props: PopupProps) => {
