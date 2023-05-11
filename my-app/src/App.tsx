@@ -10,6 +10,12 @@ import Popup from "./components/popup/popup";
 import UserList from "./components/userlist/userlist";
 import Pagination from "./components/pagination/pagination";
 
+interface avatarObject {
+  avatar: {
+    URL: string;
+    avatarNumber: number;
+  };
+}
 function App() {
   const [popup, setPopup] = useState(false);
   const [users, setUsers] = useState<UserInterface[]>([]);
@@ -21,7 +27,12 @@ function App() {
   const [page, setPage] = useState<number>(1);
   const [search, setSearch] = useState<string>("");
   const [filterToUser, setFilterToUser] = useState<string>("All Users");
-  const [avatar, setAvatar] = useState<number>(1);
+  const [avatar, setAvatar] = useState<avatarObject>({
+    avatar: {
+      URL: "",
+      avatarNumber: 0,
+    },
+  });
 
   useEffect(() => {
     setUsers(UserData);
