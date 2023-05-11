@@ -5,7 +5,10 @@ interface UserInterface {
     email: string;
     role: string;
     checked: boolean;
-    avatar: string;
+    avatar: {
+        URL: string;
+        avatarNumber: number;
+    };
     }
 
 export default UserInterface;
