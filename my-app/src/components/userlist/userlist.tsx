@@ -12,6 +12,7 @@ interface UserListProps {
   setRole: React.Dispatch<React.SetStateAction<string>>;
   setId: React.Dispatch<React.SetStateAction<number>>;
   setPage: React.Dispatch<React.SetStateAction<number>>;
+  setAvatar: React.Dispatch<React.SetStateAction<avatarObject>>;
 
   fullname: string;
   username: string;
