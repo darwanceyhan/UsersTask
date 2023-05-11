@@ -175,6 +175,7 @@ function App() {
           setPage={setPage}
           search={search}
           filterToUser={filterToUser}
+          avatar={avatar}
         />
       )}
       {popup && (
@@ -192,6 +193,8 @@ function App() {
           setRole={setRole}
           id={id}
           setId={setId}
+          avatar={avatar}
+          setAvatar={setAvatar}
         />
       )}
       <Pagination users={users} page={page} setPage={setPage} />
