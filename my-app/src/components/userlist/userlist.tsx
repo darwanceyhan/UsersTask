@@ -81,6 +81,7 @@ function UserList(props: UserListProps): JSX.Element {
                   props.setRole(user.role);
                   props.setId(user.id);
                   props.setPopup(true);
+                  props.setAvatar(user.avatar);
                 }}
               >
                 <svg
