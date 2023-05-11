@@ -180,6 +180,7 @@ function App() {
           search={search}
           filterToUser={filterToUser}
           avatar={avatar}
+          setAvatar={setAvatar}
         />
       )}
       {popup && (
