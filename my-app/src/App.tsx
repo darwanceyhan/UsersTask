@@ -21,6 +21,7 @@ function App() {
   const [page, setPage] = useState<number>(1);
   const [search, setSearch] = useState<string>("");
   const [filterToUser, setFilterToUser] = useState<string>("All Users");
+  const [avatar, setAvatar] = useState<number>(1);
 
   useEffect(() => {
     setUsers(UserData);
