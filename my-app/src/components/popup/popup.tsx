@@ -21,11 +21,13 @@ interface PopupProps {
   setEmail: React.Dispatch<React.SetStateAction<string>>;
   setRole: React.Dispatch<React.SetStateAction<string>>;
   setId: React.Dispatch<React.SetStateAction<number>>;
+  setAvatar: React.Dispatch<React.SetStateAction<number>>;
   fullname: string;
   username: string;
   email: string;
   role: string;
   id: number;
+  avatar: number;
 }
 
 const resetState = (props: PopupProps) => {
