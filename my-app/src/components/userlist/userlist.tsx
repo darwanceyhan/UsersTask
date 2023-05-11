@@ -61,7 +61,13 @@ function UserList(props: UserListProps): JSX.Element {
               checked={user.checked}
               onChange={() => checkedUser(user.id)}
             />
-            <div className="basis-1/6 gap-4"></div>
+            <div className="basis-1/6 gap-4">
+              <img
+                className="w-10 h-10 rounded mx-2"
+                src={user.avatar.URL}
+                alt="avatar"
+              />
+            </div>
             <div className="basis-1/2">{user.name}</div>
             <div className="basis-1/2">{user.username}</div>
             <div className="basis-1/2">{user.email}</div>
