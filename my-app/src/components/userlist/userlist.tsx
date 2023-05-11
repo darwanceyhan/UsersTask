@@ -20,7 +20,7 @@ interface UserListProps {
   page: number;
   search: string;
   filterToUser: string;
-  avatar: number;
+  avatar: string;
 }
 
 function UserList(props: UserListProps): JSX.Element {
