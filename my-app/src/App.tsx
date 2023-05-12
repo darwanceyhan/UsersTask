@@ -79,8 +79,8 @@ function App() {
           </div>
           Users
         </div>
-        <div className="h-full flex items-center mx-auto basis-1/3">
-          <Stack spacing={4} direction="row" className="h-full w-full">
+        <div className="h-full flex items-center mx-auto basis-1/2">
+          <Stack spacing={3} direction="row" className="h-full w-full">
             {[
               "All Users",
               "Contributor",
@@ -89,7 +89,11 @@ function App() {
               "Subscriber",
             ].map((item) => (
               <button
-                className="navbarFilterItems"
+                className={
+                  item === filterToUser
+                    ? "selectedFilter navbarFilterItems"
+                    : "navbarFilterItems"
+                }
                 onClick={() => setFilterToUser(item)}
               >
                 {item}

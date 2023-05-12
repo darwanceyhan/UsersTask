@@ -23,6 +23,10 @@ body,html{
     border-bottom-color: #2940D3;
 }
 
+.selectedFilter{
+    border-bottom-color: #2940D3;
+}
+
 .searchInput{
     border-color: white;
 }
