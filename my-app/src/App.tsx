@@ -36,22 +36,35 @@ function App() {
     setUsers(newUsers);
   };
 
-  const checkAllUsers = () => {
-    if (filterToUser === "All Users") {
-      if (users.every((user) => user.checked === true)) {
-        const newUsers = users.map((user) => ({ ...user, checked: false }));
-        setUsers(newUsers);
-      } else {
-        const newUsers = users.map((user) => ({ ...user, checked: true }));
-        setUsers(newUsers);
-      }
-    } else {
-      const newUsers = users.map((user) =>
-        user.role === filterToUser ? { ...user, checked: !user.checked } : user
-      );
-      setUsers(newUsers);
-    }
+  const checkedAllUsers = () => {
+    setUsers((prevUsers) =>
+      prevUsers.map((user) => {
+        if (
+          (user.email.includes(search) || user.username.includes(search)) &&
+          (user.role === filterToUser || filterToUser === "All Users")
+        ) {
+          return { ...user, checked: !user.checked };
+        } else {
+          return user;
+        }
+      })
+    );
   };
+
+  useEffect(() => {
+    setUsers((prevUsers) =>
+      prevUsers.slice(page * 10 - 10, page * 10).map((user) => {
+        const isVisible =
+          user.email.includes(search) || user.username.includes(search);
+        const isRoleMatched =
+          filterToUser === "All Users" || user.role === filterToUser;
+        const isChecked =
+          user.checked && isVisible && isRoleMatched ? true : false;
+
+        return { ...user, checked: isChecked };
+      })
+    );
+  }, [search, filterToUser]);
 
   return (
     <>
@@ -161,19 +174,8 @@ function App() {
       </div>
       <div className="flex flex-row w-full text-xs items-center listBar">
         <Checkbox
-          onClick={checkAllUsers}
-          checked={
-            users.length > 0 &&
-            users
-              .filter((user) => {
-                if (filterToUser === "All Users") {
-                  return user;
-                } else {
-                  return user.role === filterToUser ? user : null;
-                }
-              })
-              .every((user) => user.checked)
-          }
+          onClick={checkedAllUsers}
+          checked={users.length > 0 && users.every((user) => user.checked)}
         />
         <div className="basis-1/6 gap-4">Avatar</div>
         <div className="basis-1/2">Name</div>
