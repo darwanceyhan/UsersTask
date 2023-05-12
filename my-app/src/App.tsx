@@ -37,10 +37,19 @@ function App() {
   };
 
   const checkAllUsers = () => {
-    if (users.every((user) => user.checked === true)) {
-      setUsers(users.map((user) => ({ ...user, checked: false })));
+    if (filterToUser === "All Users") {
+      if (users.every((user) => user.checked === true)) {
+        const newUsers = users.map((user) => ({ ...user, checked: false }));
+        setUsers(newUsers);
+      } else {
+        const newUsers = users.map((user) => ({ ...user, checked: true }));
+        setUsers(newUsers);
+      }
     } else {
-      setUsers(users.map((user) => ({ ...user, checked: true })));
+      const newUsers = users.map((user) =>
+        user.role === filterToUser ? { ...user, checked: !user.checked } : user
+      );
+      setUsers(newUsers);
     }
   };
 
@@ -150,7 +159,16 @@ function App() {
         <Checkbox
           onClick={checkAllUsers}
           checked={
-            users.length > 0 && users.every((user) => user.checked === true)
+            users.length > 0 &&
+            users
+              .filter((user) => {
+                if (filterToUser === "All Users") {
+                  return user;
+                } else {
+                  return user.role === filterToUser ? user : null;
+                }
+              })
+              .every((user) => user.checked)
           }
         />
         <div className="basis-1/6 gap-4">Avatar</div>
