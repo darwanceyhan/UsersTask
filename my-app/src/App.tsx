@@ -220,7 +220,12 @@ function App() {
           setAvatar={setAvatar}
         />
       )}
-      <Pagination users={users} page={page} setPage={setPage} />
+      <Pagination
+        users={users}
+        page={page}
+        setPage={setPage}
+        filterToUser={filterToUser}
+      />
     </>
   );
 }
