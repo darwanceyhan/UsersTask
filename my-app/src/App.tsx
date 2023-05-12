@@ -56,7 +56,7 @@ function App() {
   return (
     <>
       <div className="flex flex-row items-center h-20 w-full border-b-2">
-        <div className="basis-1/4 flex items-center gap-2">
+        <div className="basis-1/4 flex items-center gap-4">
           <div
             className="w-10 h-10 flex items-center ml-4 rounded-lg"
             style={{ backgroundColor: "#D4DBFC" }}
@@ -79,8 +79,8 @@ function App() {
           </div>
           Users
         </div>
-        <div className="h-full flex items-center mx-auto">
-          <Stack spacing={8} direction="row" className="h-full">
+        <div className="h-full flex items-center mx-auto basis-1/3">
+          <Stack spacing={4} direction="row" className="h-full w-full">
             {[
               "All Users",
               "Contributor",
