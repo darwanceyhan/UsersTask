@@ -4,13 +4,19 @@ interface PaginationProps {
   users: UserInterface[];
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
+  filterToUser: string;
 }
 
 const Pagination = (props: PaginationProps) => {
   const ChangePage = (e: React.MouseEvent<HTMLButtonElement>) => {
     props.setPage(parseInt(e.currentTarget.value));
   };
-  const PageCount = Math.ceil(props.users.length / 10);
+  const PageCount = Math.ceil(
+    props.users.filter((user) => {
+      if (props.filterToUser === "All Users") return true;
+      else return user.role === props.filterToUser;
+    }).length / 10
+  );
   return (
     <div className="bg-white p-4 grid place-items-center mt-10">
       <nav aria-label="Page navigation">
