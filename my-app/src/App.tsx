@@ -14,6 +14,7 @@ import avatarObject from "./interface/avatarInterface";
 function App() {
   const [popup, setPopup] = useState(false);
   const [users, setUsers] = useState<UserInterface[]>([]);
+  const [filteredUsers, setFilteredUsers] = useState<UserInterface[]>([]);
   const [fullname, setFullname] = useState<string>("");
   const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -29,6 +30,7 @@ function App() {
 
   useEffect(() => {
     setUsers(UserData);
+    setFilteredUsers(users);
   }, []);
 
   const deleteSelectedUsers = () => {
@@ -203,6 +205,8 @@ function App() {
           filterToUser={filterToUser}
           avatar={avatar}
           setAvatar={setAvatar}
+          filteredUsers={filteredUsers}
+          setFilteredUsers={setFilteredUsers}
         />
       )}
       {popup && (
