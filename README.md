@@ -45,8 +45,9 @@ filterToUser ===  "All Users"  || user.role === filterToUser;
 const  isChecked  =user.checked && isVisible && isRoleMatched ?  true  :  false;return  {  ...user, checked: isChecked };
 }));}, [search, filterToUser]);` : **Bu fonksiyon seçilmiş kullanıcılara eğer tekrardan filtreleme işlemi uygulandığında, seçilme işlemini tekrar yapar ve sadece görürünür olanları seçer.**
 
-
 # `<Popup/>`
+
+***Kullanıcıyı düzenlemek ve ya yeni kullanıcı eklemek için açılıp kapanan bir popup.***
 
  - `addNewUser() : Yeni kullanıcı ekler`
  - `editUser() : Seçili olan kullanıcıyı düzenler`
