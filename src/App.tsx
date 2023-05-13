@@ -53,7 +53,7 @@ function App() {
 
   useEffect(() => {
     setUsers((prevUsers) =>
-      prevUsers.slice(page * 10 - 10, page * 10).map((user) => {
+      prevUsers.map((user) => {
         const isVisible =
           user.email.includes(search) || user.username.includes(search);
         const isRoleMatched =
