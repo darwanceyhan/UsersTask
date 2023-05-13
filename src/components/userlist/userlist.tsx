@@ -43,8 +43,8 @@ function UserList(props: UserListProps): JSX.Element {
       {props.users
         .filter(
           (user) =>
-            user.email.includes(props.search) ||
-            user.username.includes(props.search)
+            user.email.toLowerCase().includes(props.search.toLowerCase()) ||
+            user.username.toLowerCase().includes(props.search.toLowerCase())
         )
         .filter((user) => {
           if (props.filterToUser === "All Users") {
