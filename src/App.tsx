@@ -123,6 +123,14 @@ function App() {
               variant="contained"
               className="text-sm"
               onClick={() => setPopup(true)}
+              sx={{
+                backgroundColor: "#2940D3",
+                color: "#fff",
+                height: "50px",
+                width: "200px",
+                padding: "12px 20px 12px 15px",
+                marginLeft: "200px",
+              }}
             >
               <ControlPointIcon /> Add New User
             </Button>
