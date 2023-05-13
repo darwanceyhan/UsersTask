@@ -64,6 +64,7 @@ function App() {
         return { ...user, checked: isChecked };
       })
     );
+    setPage(1);
   }, [search, filterToUser]);
 
   return (
