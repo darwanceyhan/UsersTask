@@ -1,46 +1,76 @@
-# Getting Started with Create React App
+### ***Merhaba, projenin amacı belli bir kullanıcı verisini görüntüleyip, kulanıcılarının verilerini değiştirme ,ekleme ve silme işlemleri yapmayı hedefler.***
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Kullandığım teknolojiler;
 
-## Available Scripts
+ - REACT
+ - TYPESCRİPT
+ - TAİLWİND.CSS
+ - MATERIAL Uİ
 
-In the project directory, you can run:
+## App.tsx ' de toplamda 3 tane component kullandım;
 
-### `npm start`
+ - `<Popup/>` : Seçilen kullanıcıyı düzenlemek ya da yeni kullanıcı eklemek için açılıp kapanan bir popup,
+ - `<Userlist/>` : Burada kullancıların görüntülendiği component,
+ - `<Pagination/>`: Bu component sayfaları değiştirme işlevi görür
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## **Bu projede state managment için useState kullandım.**
+Kullanıcı verisi, filtreleme, popup, pagination ve inputlar için useState kullandım.
 
-### `npm test`
+# `App.tsx`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ - Sayfanın üst tarafında filtreleme için buton'lar,
+ - Sağ tarafında yeni kullanıcı eklemek için bir buton,
+ - Hemen alt satırında arama barı ve seçili olan kullanıcıları silen bir buton,
+ - Görünür olan kullanıcıların tamamını seçen buton
 
-### `npm run build`
+    
+ 
+ `const deleteSelectedUsers  =  ()  =>  {
+ const  newUsers  = users.filter((user)  =>  !user.checked); setUsers(newUsers);} 
+ ` : **Seçili olan kullanıcıları siler.**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`const  checkedAllUsers  =  ()  =>  {
+setUsers((prevUsers)  =>
+prevUsers.map((user)  =>  {
+if ((user.email.includes(search) || user.username.includes(search)) &&(user.role === filterToUser || filterToUser ===  "All Users")) {return  {  ...user, checked:  !user.checked };} else {return user;}}));};` : **Bu fonksiyonun amacı `<Userlist/>` 'de görünür olan kullanıcılarının tamamını seçer.**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ `useEffect(()  =>  {
+setUsers((prevUsers)  =>
+prevUsers.slice(page *  10  -  10, page *  10).map((user)  =>  {
+const  isVisible  =user.email.includes(search) || user.username.includes(search);
+const  isRoleMatched  =
+filterToUser ===  "All Users"  || user.role === filterToUser;
+const  isChecked  =user.checked && isVisible && isRoleMatched ?  true  :  false;return  {  ...user, checked: isChecked };
+}));}, [search, filterToUser]);` : **Bu fonksiyon seçilmiş kullanıcılara eğer tekrardan filtreleme işlemi uygulandığında, seçilme işlemini tekrar yapar ve sadece görürünür olanları seçer.**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+# `<Popup/>`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ - `addNewUser() : Yeni kullanıcı ekler`
+ - `editUser() : Seçili olan kullanıcıyı düzenler`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# `<Userlist/>`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+***Filtrelenmiş kullanıcı listesini map methodu ile return yapar ve her biri için editlemek ,seçmek ve silmek için butonları olur.***
 
-## Learn More
+-`deleteUser() : Kullanıcıyı siler`
+-`checkedUser() : Kullanıcıyı seçilmiş olarak işaretler`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# `<Pagination/>`
+
+***Filtrelenmiş ya da filtrelenmemiş kullanıcıları maksimum 10 adetlik alanlara ayırarak sayfa oluşturur.***
+
+-`changePage() : Seçili olan sayfa numarasını değiştirir.`
+
+
+
+
+
+
+
+
+
+
