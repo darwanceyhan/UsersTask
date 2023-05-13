@@ -20,7 +20,7 @@ const Pagination = (props: PaginationProps) => {
   return (
     <div className="bg-white p-4 grid place-items-center mt-10">
       <nav aria-label="Page navigation">
-        <ul className="inline-flex">
+        <ul className="inline-flex gap-2">
           <li>
             <button
               className="rounded h-10 px-5 text-pagination-text transition-colors duration-150 rounded-l-lg focus:shadow-outline hover:bg-pagination-bg hover:opacity-40 text-pagination-arrow"
