@@ -40,7 +40,8 @@ function App() {
     setUsers((prevUsers) =>
       prevUsers.map((user) => {
         if (
-          (user.email.includes(search) || user.username.includes(search)) &&
+          (user.email.toLowerCase().includes(search.toLowerCase()) ||
+            user.username.toLowerCase().includes(search.toLowerCase())) &&
           (user.role === filterToUser || filterToUser === "All Users")
         ) {
           return { ...user, checked: !user.checked };
@@ -55,7 +56,8 @@ function App() {
     setUsers((prevUsers) =>
       prevUsers.map((user) => {
         const isVisible =
-          user.email.includes(search) || user.username.includes(search);
+          user.email.toLowerCase().includes(search.toLowerCase()) ||
+          user.username.toLowerCase().includes(search.toLowerCase());
         const isRoleMatched =
           filterToUser === "All Users" || user.role === filterToUser;
         const isChecked =
