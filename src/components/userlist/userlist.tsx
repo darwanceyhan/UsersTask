@@ -67,10 +67,10 @@ function UserList(props: UserListProps): JSX.Element {
                 alt="avatar"
               />
             </div>
-            <div className="basis-1/2">{user.name}</div>
-            <div className="basis-1/2">{user.username}</div>
-            <div className="basis-1/2">{user.email}</div>
-            <div className="basis-1/4">{user.role}</div>
+            <div className="basis-1/2 userList-name">{user.name}</div>
+            <div className="basis-1/2 userList-info">{user.username}</div>
+            <div className="basis-1/2 userList-info">{user.email}</div>
+            <div className="basis-1/4 userList-info">{user.role}</div>
             <div className="basis-1/4 flex gap-4">
               <button
                 className="hover:text-rose-600"
