@@ -51,7 +51,7 @@ const  isChecked  =user.checked && isVisible && isRoleMatched ?  true  :  false;
 
  - `addNewUser() : Yeni kullanıcı ekler`
  - `editUser() : Seçili olan kullanıcıyı düzenler`
- - `resetState() : Tekrar kullanıcıyı düzenleme ya da ekleme işlemi yapmak için inputların değerini başta sıfırlar`
+ - `resetState() : Tekrar kullanıcıyı düzenleme ya da ekleme işlemi yapmak için inputların değerini sıfırlar`
 
 
 # `<Userlist/>`
