@@ -10,10 +10,10 @@ body,html{
 
 .navbarFilterItems{
     font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height:15.85px ;
-    color: #2940D3;
+font-weight: 600;
+font-size: 13px;
+line-height: 16px;
+    color: #82868C;
     width: 100%;
     height: 100%;
     transition: all 0.3s ease-in-out;
@@ -24,6 +24,7 @@ body,html{
 }
 
 .selectedFilter{
+    color: #2940D3;
     border-bottom-color: #2940D3;
 }
 
